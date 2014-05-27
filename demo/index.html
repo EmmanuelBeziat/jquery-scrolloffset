@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>scrollOffset</title>
+		<style>
+			body {
+				margin: 0;
+				font: 16px/1.5em "Segoe UI", Arial, sans-serif;
+			}
+
+			a {
+				text-decoration: none;
+				color: rgba(0,0,0,.6);
+				font-weight: 600;
+				transition: color .1s ease-in-out;
+			}
+
+			a:hover {
+				color: rgba(255,255,255,.6);
+			}
+
+			h1, h2 {
+				font-size: 5em;
+				line-height: 1em;
+				margin: 0 auto .6em;
+				font-weight: 300;
+			}
+
+			h1 {
+				margin-bottom: 2em;
+			}
+
+			h2 {
+				font-size: 3em;
+			}
+
+			h1 span {
+				display: block;
+				line-height: 1em;
+				margin-left: 370px;
+				font-size: .3em;
+			}
+
+			hr {
+				border: 0;
+				border-top: 2px solid #fff;
+				margin: 3em 8em;
+			}
+
+			pre {
+				background: #fff;
+				padding: 2em;
+				margin: 2em 0;
+				color: #333;
+				text-align: left;
+				box-shadow: 5px 5px 0 rgba(0,0,0,.2);
+			}
+
+			#navigation {
+				background: white;
+				position: fixed;
+				top: 10px;
+				left: 10px;
+				box-shadow: 5px 5px 0 rgba(0,0,0,.2);
+				padding: .25em;
+			}
+
+			#navigation ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+
+			#navigation a {
+				display: block;
+				color: #455455;
+				text-decoration: none;
+				padding: .5em 2em;
+			}
+
+			#navigation a:hover {
+				background: #dedede;
+			}
+
+			#ancresContent {
+				text-align: center;
+				font-size: 1.2em;
+				color: #fff;
+			}
+
+			#ancresContent section {
+				padding: 1em;
+				min-height: 800px;
+			}
+
+			.container {
+				width: 960px;
+				margin: auto;
+			}
+
+			#ancre1 { background: #1e9fc4 }
+			#ancre2 { background: #dbcf49 }
+			#ancre3 { background: #db7d49 }
+			#ancre4 { background: #db4949 }
+		</style>
+	</head>
+	<body>
+		<nav id="navigation">
+			<ul>
+				<li><a href="#ancre1">C'est quoi ?</a></li>
+				<li><a href="#ancre2">Comment ça marche ?</a></li>
+				<li><a href="#ancre3">Qu'est-ce que j'en fais ?</a></li>
+				<li><a href="#ancre4">On peut t'aider ?</a></li>
+			</ul>
+		</nav>
+
+		<div id="ancresContent">
+			<section id="ancre1">
+				<div class="container">
+					<h1>
+						ScrollOffset
+						<span><a href="https://github.com/RhooManu/jQuery-ScrollOffset">GitHub</a></span>
+					</h1>
+
+					<h2>Qu'est-ce que c'est quoi, dis donc ?</h2>
+					<p>ScrollOffset, c'est un petit plugin jQuery tout simple, qui permet de rendre la navigation de vos ancres toute fluide comme l'eau de source d'une publicité mal inspirée, et ajouter un décalage vertical si l'envie vous en prend.</p>
+
+					<hr />
+
+					<h2>What is this thing, anyway ?</h2>
+					<p>ScrollOffset is a simple and light jQuery plugin, that make your anchor navigation really smooooth like the clear and fresh water of an uninspired advertising, and add a vertical offset if you want.</p>
+				</div>
+			</section>
+
+			<section id="ancre2">
+				<div class="container">
+					<h2>Comment ça marche ?</h2>
+					<p>Le principe est basé sur les ancres html (non, c'est vrai ?). Appelez simplement la méthode <code>scrollOffset()</code> sur un objet jQuery, qui soit un lien html comportant une ancre.</p>
+
+					<pre><code>$('a[href^="#"]').scrollOffset();</code></pre>
+
+					<hr />
+
+					<h2>How does it work ?</h2>
+					<p>The principle is based on html anchors (no kidding ?). Just call for the method <code>scrollOffset()</code> on a jQuery object that is actually a html link with an anchor.</p>
+
+					<pre><code>$('a[href^="#"]').scrollOffset();</code></pre>
+				</div>
+			</section>
+
+			<section id="ancre3">
+				<div class="container">
+					<h2>Et j'peux faire quoi avec ?</h2>
+					<p>Utilisez-le comme ça vous botte : Tel quel s'il répond à vos besoins, ou bien modifiez-le à votre guise et ajoutez vos propres méthodes ou paramètres !</p>
+
+					<hr />
+
+					<h2>So what can I do with it ?</h2>
+					<p>Use it the way you want: As it is right now if it matches your needs, or upgrade it as you wish and add your methods and options !</p>
+				</div>
+			</section>
+
+			<section id="ancre4">
+				<div class="container">
+					<h2>C'est cool, on peut t'aider ?</h2>
+					<p>Absolument ! Je n'ai pas la vocation d'en faire un gros plugin avec des tonnes d'options, mais n'hésitez pas à signaler tout bug, proposer des ajouts, suggérer des améliorations ou demander des trucs en plus !</p>
+					<p>Il vous suffit de vous rendre sur la <a href="https://github.com/RhooManu/jQuery-ScrollOffset">page GitHub du plugin</a> et... Faire les trucs de GitHub !</p>
+
+					<hr />
+
+					<h2>Sounds cool, need a hand ?</h2>
+					<p>Absolutely ! I don't mean to make it a big plugin with tons of options, but feel free to point out bugs, propose some news, suggest upgrades or ask for extras !</p>
+					<p>Just go on the <a href="https://github.com/RhooManu/jQuery-ScrollOffset">GitHub plugin page</a> and... Do GitHub stuff !</p>
+
+					<h1>Merci / Thanks !</h1>
+				</div>
+			</section>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="../jquery.scrolloffset.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#navigation a[href^="#"]').scrollOffset({'offset': 40});
+			});
+		</script>
+	</body>
+</html>
