@@ -22,7 +22,6 @@
 				hauteur = $(ancre).offset().top,
 				decalage = hauteur - params.offset,
 				speed = params.speed,
-				easing = params.easing,
 				page = $('html, body');
 
 			// Gestion de l'événement clic
