@@ -2,7 +2,7 @@
  * Plugin d'ancres animées avec décalage vertical
  * Version : 2.0
  * Par Emmanuel "Manumanu" B. (www.emmanuelbeziat.com)
- * https://github.com/RhooManu/jQuery-ScrollOffset
+ * https://github.com/RhooManu/jQuery-scrollOffset
  **/
 
 (function($) {
