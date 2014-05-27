@@ -7,20 +7,25 @@
 
 (function($) {
 	$.fn.scrollOffset = function(params) {
+
+		// valeurs par défauts des options
 		params = $.extend({
 			offset: 0,
 			speed: 400
 		}, params);
 
 		this.each(function() {
+
+			// Variables
 			var lien = $(this),
-				ancre = lien.attr("href"),
+				ancre = lien.attr('href'),
 				hauteur = $(ancre).offset().top,
 				decalage = hauteur - params.offset,
 				speed = params.speed,
 				easing = params.easing,
 				page = $('html, body');
 
+			// Gestion de l'événement clic
 			lien.on('click', function(event) {
 				page.animate({
 					scrollTop: (decalage)
