@@ -37,7 +37,7 @@
 	$.scrollOffset.defaults = {
 		offset: 0,
 		speed: 400
-	}
+	};
 
 	$.fn.scrollOffset = function(params) {
 
