@@ -37,7 +37,7 @@
 			page.animate({
 				scrollTop: (decalage)
 			}, speed);
-		},
+		}
 	};
 
 	// Paramètres par défaut
@@ -52,7 +52,7 @@
 		if (0 < this.length)
 			current = new $.scrollOffset(this, params);
 
-		// Châinage jQuery
+		// Chaînage jQuery
 		return this;
 	};
 })(jQuery);
