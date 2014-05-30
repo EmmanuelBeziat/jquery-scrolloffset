@@ -7,9 +7,11 @@
 
 (function($) {
 
+	// Variables globales
 	var current = null,
 		page = $('html, body');
 
+	// Constructeur
 	$.scrollOffset = function(element, params) {
 		this.params = $.extend({}, $.scrollOffset.defaults, params);		
 
@@ -19,9 +21,13 @@
 		});			
 	};
 
+	// Méthodes
 	$.scrollOffset.prototype = {
+
+		// Constructeur
 		constructor: $.scrollOffset,
 
+		// Scrolle jusqu'à une ancre, avec l'offset souhaité
 		scroll: function(element) {
 			var ancre = element.attr('href'),
 				hauteur = $(ancre).offset().top,
@@ -34,16 +40,19 @@
 		},
 	};
 
+	// Paramètres par défaut
 	$.scrollOffset.defaults = {
 		offset: 0,
 		speed: 400
 	};
 
+	// Initialisation
 	$.fn.scrollOffset = function(params) {
 
 		if (0 < this.length)
 			current = new $.scrollOffset(this, params);
 
+		// Châinage jQuery
 		return this;
 	};
 })(jQuery);
