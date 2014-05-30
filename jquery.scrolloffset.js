@@ -1,49 +1,40 @@
 /**
  * Plugin d'ancres animées avec décalage vertical
- * Version : 2.0
+ * Version : 1.2
  * Par Emmanuel "Manumanu" B. (www.emmanuelbeziat.com)
- * https://github.com/RhooManu/jQuery-scrollOffset
+ * https://github.com/RhooManu/jQuery-ScrollOffset
  **/
 
 (function($) {
-
-	var current = null,
-		page = $('html, body');
-
-	$.scrollOffset = function(element, params) {
-		this.params = $.extend({}, $.scrollOffset.defaults, params);		
-
-		$(element).on( 'click', function(event) {
-			current.scroll($(this));
-			event.preventDefault();
-		});			
-	};
-
-	$.scrollOffset.prototype = {
-		constructor: $.scrollOffset,
-
-		scroll: function(element) {
-			var ancre = element.attr('href'),
-				hauteur = $(ancre).offset().top,
-				decalage = hauteur - this.params.offset,
-				speed = this.params.speed;
-
-			page.animate({
-				scrollTop: (decalage)
-			}, speed);
-		},
-	};
-
-	$.scrollOffset.defaults = {
-		offset: 0,
-		speed: 400
-	};
-
 	$.fn.scrollOffset = function(params) {
 
-		if (0 < this.length)
-			current = new $.scrollOffset(this, params);
+		// valeurs par défauts des options
+		params = $.extend({
+			offset: 0,
+			speed: 400
+		}, params);
 
+		this.each(function() {
+
+			// Variables
+			var lien = $(this),
+				ancre = lien.attr('href'),
+				hauteur = $(ancre).offset().top,
+				decalage = hauteur - params.offset,
+				speed = params.speed,
+				page = $('html, body');
+
+			// Gestion de l'événement clic
+			lien.on('click', function(event) {
+				page.animate({
+					scrollTop: (decalage)
+				}, speed);
+				event.preventDefault();
+			});
+
+		});
+
+		// Chainage jQuery
 		return this;
 	};
 })(jQuery);
