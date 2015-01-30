@@ -5,7 +5,9 @@
  * https://github.com/RhooManu/jQuery-ScrollOffset
  **/
 
-(function($) {
+(function($, undefined) {
+	"use strict";
+
 	$.fn.scrollOffset = function(params) {
 
 		// valeurs par défauts des options
