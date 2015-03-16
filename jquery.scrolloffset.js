@@ -5,7 +5,7 @@
  * https://github.com/RhooManu/jQuery-ScrollOffset
  **/
 
-(function($, undefined) {
+;(function($, undefined) {
 	"use strict";
 
 	$.fn.scrollOffset = function(params) {
