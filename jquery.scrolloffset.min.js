@@ -1,4 +1,4 @@
-/**
+/*!
  * Plugin d'ancres animées avec décalage vertical
  * Version : 1.2
  * Par Emmanuel "Manumanu" B. (www.emmanuelbeziat.com)
