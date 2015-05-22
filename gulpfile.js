@@ -15,7 +15,7 @@ var gulp = require('gulp'),
  * Chemins
  */
 var pathDemo = './demo',
-	pathCSS = './demo/css'
+	pathCSS = './demo/css',
 	pathSrc = './src',
 	pathDist = './dist',
 	pathStylus = './src/stylus',
