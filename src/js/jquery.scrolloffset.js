@@ -32,6 +32,7 @@
 	};
 
 	$.extend(Plugin.prototype, {
+
 		init: function() {
 			var plugin = this;
 
@@ -40,9 +41,12 @@
 			});
 		},
 
+		/**
+		 * Get the position of the targeted element and add the offset
+		 */
 		animate: function() {
 			$('html, body').animate({
-				scrollTop: (this.settings.offset)
+				scrollTop: ($($(event.target).attr('href')).offset().top - this.settings.offset)
 			}, this.settings.speed);
 		}
 	});
