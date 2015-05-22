@@ -1,0 +1,44 @@
+/**
+ * Mixins
+ */
+clearfix()
+	&:before
+	&:after
+		content ""
+		display table
+
+	&:after
+		clear both
+
+transform(valeur)
+	-webkit-transform valeur
+	-ms-transform valeur
+	transform valeur
+
+container()
+	width 480px
+	margin auto
+
+/**
+ * Variables
+ **/
+colorText = #eaeef3
+colorBackground = #4a4c55
+colorHighlight = #3388c4
+
+/**
+ * Base
+ */
+body
+	margin 0
+	background colorBackground
+	font 400 16px/1.5em "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif
+	color colorText
+
+.container
+	container()
+
+.demo
+	margin-top 40px
+
+@require 'exemple1.styl'
