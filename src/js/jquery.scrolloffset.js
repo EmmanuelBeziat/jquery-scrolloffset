@@ -1,7 +1,7 @@
 /*!
  * Animate anchors to make them smooth, and allows offset
  * Version : 2.0
- * Emmanuel "Manumanu" B. (www.emmanuelbeziat.com)
+ * Emmanuel B. (www.emmanuelbeziat.com)
  * https://github.com/EmmanuelBeziat/jQuery-ScrollOffset
  **/
 
@@ -31,6 +31,9 @@
 		this.init();
 	};
 
+	/**
+	 * Methods
+	 */
 	$.extend(Plugin.prototype, {
 
 		init: function() {
