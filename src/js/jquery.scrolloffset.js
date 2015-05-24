@@ -5,8 +5,8 @@
  * https://github.com/EmmanuelBeziat/jQuery-ScrollOffset
  **/
 
-;(function($, undefined) {
-	"use strict";
+ ;(function($, window, document, undefined) {
+ 	'use strict';
 
 	/**
 	 * Default values
@@ -65,4 +65,4 @@
 			}
 		});
 	};
-})(jQuery);
+})(jQuery, window, document);
