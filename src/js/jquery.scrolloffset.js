@@ -39,8 +39,9 @@
 		init: function() {
 			var plugin = this;
 
-			$(plugin.element).on('click', function() {
+			$(plugin.element).on('click', function(event) {
 				plugin.animate();
+				event.preventDefault();
 			});
 		},
 
