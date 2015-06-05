@@ -14,7 +14,7 @@
 	var pluginName = 'scrollOffset',
 		defaults = {
 			offset: 0,
-			speed: 400
+			duration: 400
 		};
 
 	/**
@@ -51,7 +51,7 @@
 		animate: function() {
 			$('html, body').animate({
 				scrollTop: ($($(event.target).attr('href')).offset().top - this.settings.offset)
-			}, this.settings.speed);
+			}, this.settings.duration);
 		}
 	});
 

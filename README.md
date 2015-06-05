@@ -29,7 +29,7 @@ $('a[href^="#"]').scrollOffset();
 			<td>Définit la valeur (en pixels) du décalage vertical à appliquer.</td>
 		</tr>
 		<tr>
-			<th>speed</th>
+			<th>duration</th>
 			<td>400</td>
 			<td>nombre ou valeurs clé de temps jquery (<code>slow</code>, <code>fast</code>)</td>
 			<td>Gère le temps de l'animation de défilement vers l'ancre.</td>
