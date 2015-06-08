@@ -6,7 +6,7 @@
  **/
 
  ;(function($, window, document, undefined) {
- 	'use strict';
+	'use strict';
 
 	/**
 	 * Default values
@@ -25,6 +25,8 @@
 
 		this.settings = $.extend({}, defaults, options);
 
+		this.body = $('html, body');
+
 		this._defaults = defaults;
 		this._name = pluginName;
 
@@ -40,7 +42,7 @@
 			var plugin = this;
 
 			$(plugin.element).on('click', function(event) {
-				plugin.animate();
+				plugin.animate(plugin.body, $(event.target).attr('href'));
 				event.preventDefault();
 			});
 		},
@@ -48,9 +50,9 @@
 		/**
 		 * Get the position of the targeted element and add the offset
 		 */
-		animate: function() {
-			$('html, body').animate({
-				scrollTop: ($($(event.target).attr('href')).offset().top - this.settings.offset)
+		animate: function(body, target) {
+			body.animate({
+				scrollTop: ($(target).offset().top - this.settings.offset)
 			}, this.settings.duration);
 		}
 	});
@@ -59,11 +61,11 @@
 	 * jQuery plugin wrapper
 	 */
 	$.fn[pluginName] = function(options) {
+		var _oPlugin;
 
-		return this.each(function() {
-			if (!$.data(this, 'plugin_' + pluginName)) {
-				$.data(this, 'plugin_' + pluginName, new Plugin(this, options));
-			}
-		});
+		if ( $.data( this, 'plugin_' + pluginName ) !== true ) {
+			_oPlugin = new Plugin( this, options );
+			$.data( this, 'plugin_' + pluginName, true );
+		}
 	};
 })(jQuery, window, document);
