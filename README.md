@@ -3,6 +3,16 @@ ScrollOffset
 
 Un simple plugin de défilement d'ancres en jQuery, avec la possibilité de définir un décalage vertical (offset), par exemple pour tenir compte d'une navbar fixe (ou simplement pour une raison cosmétique).
 
+#Installation
+
+Si vous utilisez Bower, vous pouvez l'installer directement
+
+```bash
+$ bower install jquery-scrolloffset
+```
+
+Sinon, il vous suffit de récupérer manuellement les fichiers sur github.
+
 #Utilisation
 
 Le principe est basé sur les ancres html.
