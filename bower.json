@@ -1,0 +1,35 @@
+{
+  "name": "jQuery-ScrollOffset",
+  "version": "2.0.0",
+  "homepage": "https://github.com/EmmanuelBeziat/jQuery-ScrollOffset",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EmmanuelBeziat/jQuery-ScrollOffset"
+  },
+  "authors": [
+    "Emmanuel B. <contact@emmanuelbeziat.com>"
+  ],
+  "description": "Animate anchors to make them smooth, and allows offset",
+  "main": "dist/jquery.scrolloffset.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "scroll"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo",
+    "src",
+    "gulpfile.js"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.2"
+  }
+}
