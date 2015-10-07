@@ -1,69 +1,69 @@
 /**
- * Dépendances gulp
+ * Gulp dependancies
  */
 var gulp = require('gulp'),
-	autoprefixer = require('gulp-autoprefixer'),
-	sourcemaps = require('gulp-sourcemaps'),
 	rename = require('gulp-rename'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
-	jshint = require('gulp-jshint'),
 	stylus = require('gulp-stylus'),
-	stylish = require('jshint-stylish');
+	plumber = require('gulp-plumber'),
+	sourcemaps = require('gulp-sourcemaps'),
+	autoprefixer = require('gulp-autoprefixer');
 
 /**
- * Chemins
+ * Project
  */
-var pathDemo = './demo',
-	pathCSS = './demo/css',
-	pathSrc = './src',
-	pathDist = './dist',
-	pathStylus = './src/stylus',
-	pathJS = './src/js';
+var project = 'jquery-scrolloffset';
 
 /**
- * Sauvegarde et compresse les fichiers stylus dans un unique fichier style.css
- * Garde le comportement @require de stylus
- * Crée un fichier sourcemap
+ * Paths
+ */
+var path = {
+		demo: './demo',
+		css: './demo/css',
+		src: './src',
+		dist: './dist',
+		stylus: './src/stylus',
+		js: './src/js'
+	};
+
+/**
+ * Save and minify stylus files in one css file
+ * Create sourcemap file
  **/
 gulp.task('stylus', function() {
-	return gulp.src(pathStylus + '/main.styl')
+	return gulp.src(path.stylus + '/main.styl')
+		.pipe(plumber())
 		.pipe(sourcemaps.init())
 			.pipe(stylus({
 				compress: true
 			}))
 		.pipe(sourcemaps.write('../css'))
-		.pipe(gulp.dest(pathCSS));
+		.pipe(plumber.stop())
+		.pipe(gulp.dest(path.css));
 });
 
 /**
- * Linter JS
- */
-gulp.task('jshint', function() {
-	return gulp.src(pathJS + '/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter(stylish));
-});
-
-/**
- * Sauvegarde et compresse les fichiers JS dans un fichier minifié
- * Crée un fichier sourcemap
+ * Save and minify js files in one js file
+ * Create sourcemap file
  **/
 gulp.task('javascript', function() {
-	return gulp.src(pathJS + '/*.js')
+	return gulp.src(path.js + '/*.js')
+		.pipe(plumber())
 		.pipe(sourcemaps.init())
 			.pipe(uglify({
 				preserveComments: 'some'
 			}))
-			.pipe(rename('jquery-scrolloffset.min.js'))
+			.pipe(rename(project + '.min.js'))
 		.pipe(sourcemaps.write('../dist'))
-		.pipe(gulp.dest(pathDist));
+		.pipe(plumber.stop())
+		.pipe(gulp.dest(path.dist));
 });
 
-gulp.task('default', ['stylus', 'jshint', 'javascript'], function() {
+gulp.task('default', ['stylus', 'javascript'], function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(pathStylus + '/*.styl', ['stylus']);
-	gulp.watch(pathJS + '/*.js', ['javascript']);
+	gulp.watch(path.stylus + '/*.styl', ['stylus']);
+	gulp.watch(path.js + '/*.js', ['javascript']);
 });
