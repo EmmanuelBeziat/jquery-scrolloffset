@@ -44,6 +44,12 @@ $('a[href^="#"]').scrollOffset();
 			<td>nombre ou valeurs clé de temps jquery (<code>slow</code>, <code>fast</code>)</td>
 			<td>Gère le temps de l'animation de défilement vers l'ancre.</td>
 		</tr>
+		<tr>
+			<th>onComplete</th>
+			<td>null</td>
+			<td>fonction</td>
+			<td>Permet d'appeler une fonction de votre choix à la fin du défilement</td>
+		</tr>
 	</tbody>
 </table>
 
