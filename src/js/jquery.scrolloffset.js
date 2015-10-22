@@ -1,6 +1,6 @@
 /*!
  * Animate anchors to make them smooth, and allows offset
- * Version : 2.1
+ * Version : 2.1.1
  * Emmanuel B. (www.emmanuelbeziat.com)
  * https://github.com/EmmanuelBeziat/jQuery-ScrollOffset
  **/
@@ -83,6 +83,8 @@
 			this.$body.animate({
 				scrollTop: ($target.offset().top - this.options.offset)
 			}, this.options.duration);
+
+			event.preventDefault();
 		},
 
 		/**
