@@ -18,6 +18,13 @@ var project = 'jquery-scrolloffset',
 	};
 
 /**
+ * livereload
+ */
+gulp.task('reload', function() {
+	plugins.livereload();
+});
+
+/**
  * Save and minify stylus files in one css file
  * Create sourcemap file
  **/
@@ -59,4 +66,5 @@ gulp.task('watch', function() {
 	plugins.livereload.listen();
 	gulp.watch(path.stylus + '/*.styl', ['stylus']);
 	gulp.watch(path.js + '/*.js', ['javascript']);
+	gulp.watch('**/*.html', ['reload']);
 });
