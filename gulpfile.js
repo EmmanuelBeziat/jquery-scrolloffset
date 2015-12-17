@@ -2,23 +2,13 @@
  * Gulp dependancies
  */
 var gulp = require('gulp'),
-	rename = require('gulp-rename'),
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
-	stylus = require('gulp-stylus'),
-	plumber = require('gulp-plumber'),
-	sourcemaps = require('gulp-sourcemaps'),
-	autoprefixer = require('gulp-autoprefixer');
+	plugins = require('gulp-load-plugins')();
 
 /**
- * Project
+ * Project & pathes
  */
-var project = 'jquery-scrolloffset';
-
-/**
- * Paths
- */
-var path = {
+var project = 'jquery-scrolloffset',
+	path = {
 		demo: './demo',
 		css: './demo/css',
 		src: './src',
@@ -33,14 +23,15 @@ var path = {
  **/
 gulp.task('stylus', function() {
 	return gulp.src(path.stylus + '/main.styl')
-		.pipe(plumber())
-		.pipe(sourcemaps.init())
-			.pipe(stylus({
+		.pipe(plugins.plumber())
+		.pipe(plugins.sourcemaps.init())
+			.pipe(plugins.stylus({
 				compress: true
 			}))
-		.pipe(sourcemaps.write('../css'))
-		.pipe(plumber.stop())
-		.pipe(gulp.dest(path.css));
+		.pipe(plugins.sourcemaps.write('../css'))
+		.pipe(plugins.plumber.stop())
+		.pipe(gulp.dest(path.css))
+		.pipe(plugins.livereload());
 });
 
 /**
@@ -49,21 +40,23 @@ gulp.task('stylus', function() {
  **/
 gulp.task('javascript', function() {
 	return gulp.src(path.js + '/*.js')
-		.pipe(plumber())
-		.pipe(sourcemaps.init())
-			.pipe(uglify({
+		.pipe(plugins.plumber())
+		.pipe(plugins.sourcemaps.init())
+			.pipe(plugins.uglify({
 				preserveComments: 'some'
 			}))
-			.pipe(rename(project + '.min.js'))
-		.pipe(sourcemaps.write('../dist'))
-		.pipe(plumber.stop())
-		.pipe(gulp.dest(path.dist));
+			.pipe(plugins.rename(project + '.min.js'))
+		.pipe(plugins.sourcemaps.write('../dist'))
+		.pipe(plugins.plumber.stop())
+		.pipe(gulp.dest(path.dist))
+		.pipe(plugins.livereload());
 });
 
 gulp.task('default', ['stylus', 'javascript'], function() {
 });
 
 gulp.task('watch', function() {
+	plugins.livereload.listen();
 	gulp.watch(path.stylus + '/*.styl', ['stylus']);
 	gulp.watch(path.js + '/*.js', ['javascript']);
 });
