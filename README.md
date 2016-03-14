@@ -54,4 +54,5 @@ $('a[href^="#"]').scrollOffset();
 </table>
 
 #Évolutions envisagées
-* ??
+* Si l'élément correspondant à l'ancre n'est pas trouvé dans la page → Gérer (renvoyer au top)
+* Permettre d'appeler autre chose qu'un ID (choix du sélecteur)
