@@ -78,7 +78,7 @@
 		 * When anchors are used, lock up the scroll
 		 */
 		animate: function(event) {
-			var $target = $($(event.target).attr('href'));
+			var $target = $($(event.currentTarget).attr('href'));
 
 			this.$body.animate({
 				scrollTop: ($target.offset().top - this.options.offset)
